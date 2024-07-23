@@ -9,13 +9,8 @@
   boot.loader.grub.useOSProber = true;
 
   # Supported filesystems
-  boot.supportedFilesystems = [ "zfs" ];
+  boot.supportedFilesystems = [ "btrfs" ];
 
-  # ZFS configuration
-  services.zfs = {
-    enable = true;
-    autoScrub.enable = true;
-  };
 
   # Networking configuration
   networking.hostName = "mono";
@@ -71,6 +66,7 @@
   nixpkgs.config.allowUnfree = true;
   
   environment.systemPackages = with pkgs; [
+    btrfs-progs
     vim
     wget
     neofetch
