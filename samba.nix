@@ -8,7 +8,9 @@
   };
 
   services.samba = {
+    package = pkgs.samba4Full;
     enable = true;
+    openFirewall = true;
     extraConfig = ''
       [pool]
       path = /mnt/pool/share
