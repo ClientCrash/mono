@@ -83,5 +83,8 @@
     options = [ "nofail" ];
   };
 
+  networking.firewall.enable = true;
+  networking.firewall.allowPing = true;
+
   system.stateVersion = "24.05";
 }
