@@ -43,7 +43,6 @@
     enable = true;
     setSocketVariable = true;
   };
-  users.extraGroups = [ "docker" ];
 
   # User configuration
   users.users.noah = {
@@ -52,6 +51,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     packages = with pkgs; [ ];
   };
@@ -72,6 +72,7 @@
     neofetch
     htop
     pastebinit
+    git
   ];
 
 
