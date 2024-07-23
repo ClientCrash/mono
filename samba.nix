@@ -20,11 +20,12 @@
         path = "/mnt/pool/share";
         browseable = "yes";
         "read only" = "no";
-        "guest ok" = "yes";
+        "guest ok" = "no";  # Disable guest access
         "create mask" = "0644";
         "directory mask" = "0755";
-        "force user" = "username";
-        "force group" = "groupname";
+        "force user" = "noah";
+        "force group" = "nogroup";
+        "valid users" = "noah";
       };
     };
   };
