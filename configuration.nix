@@ -74,5 +74,12 @@
     pastebinit
   ];
 
+
+  fileSystems."/mnt/pool" = {
+    device = "LABEL=poolparty";
+    fsType = "btrfs";
+    options = [ "nofail" ];
+  };
+
   system.stateVersion = "24.05";
 }
