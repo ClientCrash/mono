@@ -8,8 +8,17 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
+  # Supported filesystems
+  boot.supportedFilesystems = [ "zfs" ];
+
+  # ZFS configuration
+  services.zfs = {
+    enable = true;
+    autoScrub.enable = true;
+  };
+
   # Networking configuration
-  networking.hostName = "nixos";
+  networking.hostName = "mono";
   networking.networkmanager.enable = true;
 
   # Time and locale settings
