@@ -1,4 +1,8 @@
-services.samba = {
+{ config, pkgs, ... }:
+
+{
+
+  services.samba = {
   enable = true;
   securityType = "user";
   openFirewall = true;
@@ -32,3 +36,4 @@ services.samba-wsdd = {
 
 networking.firewall.enable = true;
 networking.firewall.allowPing = true;
+}
