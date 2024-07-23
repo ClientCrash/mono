@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ./samba.nix
+  ];
 
   # Bootloader configuration
   boot.loader.grub.enable = true;
@@ -10,7 +13,6 @@
 
   # Supported filesystems
   boot.supportedFilesystems = [ "btrfs" ];
-
 
   # Networking configuration
   networking.hostName = "mono";
@@ -64,7 +66,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
   environment.systemPackages = with pkgs; [
     btrfs-progs
     vim
@@ -74,7 +76,6 @@
     pastebinit
     git
   ];
-
 
   fileSystems."/mnt/pool" = {
     device = "LABEL=poolparty";
