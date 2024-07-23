@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 
 {
+
+  # Ensure the share directory exists
+  environment.etc."mnt/pool/share" = {
+    text = "";
+  };
+
   services.samba = {
     enable = true;
     extraConfig = ''
