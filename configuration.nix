@@ -13,7 +13,7 @@
 
   # Supported filesystems
   boot.supportedFilesystems = [ "zfs" ];
-
+  networking.hostId = "2984c03b";
   boot.zfs.extraPools = [
     "poolparty"
   ];
