@@ -17,7 +17,7 @@
     '';
     shares = {
       public = {
-        path = "/mnt/pool/share";
+        path = "/poolparty/share";
         browseable = "yes";
         "read only" = "no";
         "guest ok" = "no";  # Disable guest access

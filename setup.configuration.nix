@@ -73,12 +73,6 @@
     git
   ];
 
-  fileSystems."/mnt/pool" = {
-    device = "LABEL=poolparty";
-    fsType = "zfs";
-    options = [ "nofail" ];
-  };
-
   networking.firewall.enable = true;
   networking.firewall.allowPing = true;
 
