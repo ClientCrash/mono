@@ -12,7 +12,7 @@
   boot.loader.grub.useOSProber = true;
 
   # Supported filesystems
-  supportedFilesystems = [ "zfs" ];
+  boot.supportedFilesystems = [ "zfs" ];
 
   zfs.extraPools = [
     "poolparty"
