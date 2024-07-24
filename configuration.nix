@@ -73,7 +73,6 @@
   };
 
   services.zfs = {
-    enable = true;
     autoScrub.enable = true;
   };
 
