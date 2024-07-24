@@ -12,7 +12,11 @@
   boot.loader.grub.useOSProber = true;
 
   # Supported filesystems
-  boot.supportedFilesystems = [ "btrfs" ];
+  supportedFilesystems = [ "zfs" ];
+
+  zfs.extraPools = [
+    "poolparty"
+  ];
 
   # Networking configuration
   networking.hostName = "mono";
@@ -56,19 +60,27 @@
       "docker"
     ];
     packages = with pkgs; [ ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEi5tcWoKorSEvEqYw4Z+VWXntuqc9HxVybX4ZwmraOB"
+    ];
   };
 
   # SSH configuration
   services.openssh = {
     enable = true;
     permitRootLogin = "no";
+    passwordAuthentication = false;
+  };
+
+  services.zfs = {
+    autoScrub.enable = true;
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    btrfs-progs
+    zfs
     vim
     wget
     neofetch
@@ -79,7 +91,7 @@
 
   fileSystems."/mnt/pool" = {
     device = "LABEL=poolparty";
-    fsType = "btrfs";
+    fsType = "zfs";
     options = [ "nofail" ];
   };
 
