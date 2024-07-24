@@ -14,7 +14,7 @@
   # Supported filesystems
   boot.supportedFilesystems = [ "zfs" ];
 
-  zfs.extraPools = [
+  boot.zfs.extraPools = [
     "poolparty"
   ];
 
